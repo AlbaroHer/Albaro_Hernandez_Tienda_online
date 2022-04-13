@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    
+    <p>Articulo encontrado: {{query.upper}} </p>
+
+    {% if art %}
+
+    <ul>
+     {% for arti in art %}
+        
+        <li>{{arti.nombre}}</li>
+    
+    {% endfor %}
+
+    {% endif %}
+
+
+    </ul>
+
+
+</body>
+
+</html>

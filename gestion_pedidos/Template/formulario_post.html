@@ -1,0 +1,25 @@
+<html>
+
+    
+
+<body>
+
+    
+    <form action="/formulario_post/" method="POST">{% csrf_token %}
+
+        <p>Nombre: <input type="text" name="nombre"></p>
+        
+        <p>Direccion: <input type="text, number" name="direccion"></p>
+        
+        <p>Email: <input type="email" name="email"></p>
+
+        <p>Telefono: <input type="number" name="telefono"></p>
+
+        <input type="submit" value="enviar">
+
+    </form>
+
+</body>
+
+
+</html>
