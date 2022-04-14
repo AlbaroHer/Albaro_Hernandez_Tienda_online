@@ -47,17 +47,20 @@ def agregar_productos(request):
             email= request.POST['email'],
             telefono= request.POST['telefono'],
             )
-        
-        
-        
+             
         return render(request, "formulario_post.html")
-        
-    
+           
     return render(request, "formulario_post.html")
 
 
+
 def Barra_principal(request):
-    return HttpResponse(render (request, "barra_principla.html"))
+    
+    return render (request, "barra_principal.html")
+
+def Idex(request):
+    
+    return render(request, "index.html")
 
 
 
