@@ -10,10 +10,10 @@ from gestion_pedidos.views import*
 
 urlpatterns= [
     
-    path('formulario_get/', busqueda_productos, name='consultas'),
+    path('formulario_get/', busqueda_productos, name='consulta'),
     path('buscar/', buscar),
     path('formulario_post/', agregar_productos, name="ingreso"),
     path('barra_principal/', Barra_principal, name="menu"),
-    path('index/', Idex, name="index"),
+    path('', Home, name="inicio"),
     
 ]

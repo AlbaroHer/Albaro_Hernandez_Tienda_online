@@ -1,25 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
 <html>
 
     
 
 <body>
 
+    <div>
     
-    <form action="/formulario_post/" method="POST">{% csrf_token %}
 
-        <p>Nombre: <input type="text" name="nombre"></p>
+        <form action="/formulario_post/" method="POST" style="color: white;"> {% csrf_token %}
+           
+
+            <p>Nombre: <input type="text" name="nombre"></p> 
+            
+            <p>Direccion: <input type="text, number" name="direccion"></p>
+            
+            <p>Email: <input type="email" name="email"></p>
+    
+            <p>Telefono: <input type="number" name="telefono"></p>
+    
+            <input type="submit" value="enviar"></table> 
+    
+    
+        </form>
+
+   
+
         
-        <p>Direccion: <input type="text, number" name="direccion"></p>
-        
-        <p>Email: <input type="email" name="email"></p>
 
-        <p>Telefono: <input type="number" name="telefono"></p>
 
-        <input type="submit" value="enviar">
+    </div>
+    
 
-    </form>
 
 </body>
 
 
 </html>
+
+{% endblock %}

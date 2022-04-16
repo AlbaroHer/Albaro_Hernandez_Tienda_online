@@ -1,13 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
 
 <html>
 
-    
-
-    <title>Busqueda de poductos</title>
-
-
 
 <body>
+    
+    <span class="site-heading-lower-new" > 
+        <h2 > ¡Consulta el stock!.</h2> </span>
     
     <form action="/buscar/" method="get">
 
@@ -21,3 +26,6 @@
 
 
 </html>
+
+{% endblock %}
+

@@ -6,7 +6,7 @@ class Clientes(models.Model):
     nombre=models.CharField(max_length=30)
     direccion=models.CharField(max_length=50) #verbos_name="La direcion"-> permitira renombrar el nombre de la fila o campo de la tabla.
     email=models.EmailField(blank=True, null=True) # blank=True, null=True -> permite que el registro no sea requerrido.
-    telefono=models.IntegerField(max_length=10)
+    telefono=models.IntegerField(max_length=15)
 
     def __str__(self):
         return self.nombre

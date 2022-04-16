@@ -1,15 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
 <html>
 
 <body>
     
-    <p>Articulo encontrado: {{query.upper}} </p>
+    
 
     {% if art %}
 
     <ul>
      {% for arti in art %}
+
+     <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'gestion_pedidos/img/acceso.jpg' %}" alt="">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+                <span class="section-heading-upper"><ps style="color: white;">Articulo disponible</p></span>
+                <span class="section-heading-lower"> <span style="color: white;">{{arti.nombre}}</span>
+              </h2>
+              <p class="mb-3">Aprovecha la oportunidad. <nav> ¡Has tu oferta!.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+      </section>
         
-        <li>{{arti.nombre}}</li>
+       
     
     {% endfor %}
 
@@ -22,3 +47,5 @@
 </body>
 
 </html>
+
+{% endblock %}

@@ -6,31 +6,34 @@ from .models import *
 # Create your views here.
 
 def busqueda_productos(request):
-   
+
     return render(request, "formulario_get.html")
 
 # Metodo GET
 
 def buscar(request):
-    
+
     if request.GET["producto"]:
-        
+
         prod=request.GET["producto"]
-        
+
         if len(prod)>20:
-            
+
             mensaje='Excedio el numero de caracteres'
-        
+
+            return HttpResponse(mensaje)
+
         else:
-        
+
             art= Articulos.objects.filter(nombre__icontains=prod)
-        
+
             return HttpResponse (render(request,"resultado.html", {"art": art, "query": prod}))
-        
+
+
     else:
-        
+
          mensaje= 'Debe ingresar un dato valido'
-        
+
 
     return HttpResponse(mensaje)
 
@@ -38,29 +41,29 @@ def buscar(request):
 # Metodo POST
 
 def agregar_productos(request):
-    
+
     if request.method == 'POST':
-        
+
         cliente= Clientes.objects.create(
-            nombre= request.POST['nombre'], 
+            nombre= request.POST['nombre'],
             direccion= request.POST['direccion'],
             email= request.POST['email'],
             telefono= request.POST['telefono'],
             )
-             
+
         return render(request, "formulario_post.html")
-           
+
     return render(request, "formulario_post.html")
 
 
 
 def Barra_principal(request):
-    
+
     return render (request, "barra_principal.html")
 
-def Idex(request):
-    
-    return render(request, "index.html")
+def Home(request):
+
+    return render(request, "home.html")
 
 
 
